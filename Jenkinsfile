@@ -12,7 +12,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying..'
-                sh 'sudo docker container run -dt --name dist -p 8083:80 --volume /home/ubuntu/dist:/usr/share/nginx/html nginx'
+                sh 'sudo /var/www/html/*
+                sh 'sudo docker container run -dt --name dist -p 8083:80 --volume /home/ubuntu/dist:/var/www/html'
             }
         }
     }
