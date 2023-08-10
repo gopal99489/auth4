@@ -19,8 +19,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying..'
-                // Add deployment steps here
-                // For example, deploying to a server or cloud platform
+              sh 'sudo docker container run -dt --name dist -p 8081:80 --volume /home/ubuntu/dist:/usr/share/nginx/html nginx'
             }
         }
     }
