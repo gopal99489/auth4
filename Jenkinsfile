@@ -12,14 +12,14 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh 'cd auth4 && npm run test'
+                sh 'cd auth4 && npm test'
             }
         }
         
         stage('Deploy') {
             steps {
                 echo 'Deploying..'
-              sh 'sudo docker container run -dt --name dist -p 8081:80 --volume /home/ubuntu/dist:/usr/share/nginx/html nginx'
+                sh 'sudo docker container run -dt --name dist -p 8081:80 --volume /home/ubuntu/dist:/usr/share/nginx/html nginx'
             }
         }
     }
@@ -33,4 +33,3 @@ pipeline {
         }
     }
 }
-
