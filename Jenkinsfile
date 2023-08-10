@@ -12,7 +12,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh 'cd auth4 && npm test'
+                sh 'cd auth4 && npm run test'
             }
         }
         
