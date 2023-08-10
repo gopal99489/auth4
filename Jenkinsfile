@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'cd auth4/auth4 && npm install && npm run build'
+                sh 'cd auth4 auth4 && npm install && npm run build'
             }
         }
         
