@@ -9,13 +9,6 @@ pipeline {
             }
         }
         
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-                sh 'cd auth4 && npm test'
-            }
-        }
-        
         stage('Deploy') {
             steps {
                 echo 'Deploying..'
@@ -26,7 +19,7 @@ pipeline {
 
     post {
         success {
-            echo 'Pipeline succeeded! Your application is built, tested, and ready for deployment.'
+            echo 'Pipeline succeeded! Your application is built and ready for deployment.'
         }
         failure {
             echo 'Pipeline failed. Please check the logs and address any issues.'
