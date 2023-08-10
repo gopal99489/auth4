@@ -12,7 +12,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying..'
-                sh 'cd /usr/share/nginx/html && sudo rm index.html'
+                sh 'cd auth4'
                 sh 'sudo docker container run -dt --name dist -p 8081:80 --volume /home/ubuntu/dist:/usr/share/nginx/html nginx'
             }
         }
